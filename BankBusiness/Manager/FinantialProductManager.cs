@@ -27,63 +27,9 @@ namespace BankBusiness.Manager
         public GenericResponse<bool> CreateFinantialProduct(Client client)
         {
             var objResponse = new GenericResponse<bool>();
-           /* BankData.Model.CDT CDT;
-            BankData.Model.CurrentAccount CurrentAccount;
-            BankData.Model.SavingsAccount SavingsAccount;*/
 
             try
             {
-                /*if (client.CDT != null)
-                {
-                    CDT = new BankData.Model.CDT()
-                    {
-                        Balance = client.CDT.Balance,
-                        InterestRate = client.CDT.InterestRate,
-                        State = true
-                    };
-
-                    _context.CDT.Add(CDT);
-                    _context.SaveChanges();
-
-                    client.IdCDT = CDT.IdCDT;
-                }
-                else if (client.CurrentAccount != null)
-                {
-                    CurrentAccount = new BankData.Model.CurrentAccount()
-                    {
-                        Balance = client.CurrentAccount.Balance,
-                        State = true
-                    };
-
-                    _context.CurrentAccount.Add(CurrentAccount);
-                    _context.SaveChanges();
-
-                    client.IdCurrentAccount = CurrentAccount.IdCurrentAccount;
-                }
-                else
-                {
-                    if (client.SavingsAccount != null)
-                    {
-                        SavingsAccount = new BankData.Model.SavingsAccount()
-                        {
-                            Balance = client.SavingsAccount.Balance,
-                            InterestRate = client.SavingsAccount.InterestRate,
-                            State = true
-                        };
-
-                        _context.SavingsAccount.Add(SavingsAccount);
-                        _context.SaveChanges();
-
-                        client.IdSavingsAccount = SavingsAccount.IdSavingsAccount;
-                    }
-                }
-
-                if (client.LegalRepresentative != null)
-                {
-                    var response = _legalRepresentative.CreateOrUpdateLegalRepresentative(client.LegalRepresentative);
-                    client.IdLegalRepresentative = response.Data;
-                }*/
-
                 objResponse = _clientManager.CreateOrUpdateClient(client);
 
             }
